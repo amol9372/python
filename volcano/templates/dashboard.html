@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flask Application</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Using jQuery with a CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/volcano.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Easy AutoComplete files-->
+    <!-- JS file -->
+    <script src="../static/easy_auto_complete/jquery.easy-autocomplete.min.js"></script>
+    <!-- CSS file -->
+    <link rel="stylesheet" href="../static/easy_auto_complete/easy-autocomplete.min.css">
+    <!-- Additional CSS Themes file - not required-->
+    <link rel="stylesheet" href="../static/easy_auto_complete/easy-autocomplete.themes.min.css">
+
+    <!-- Custom js files -->
+    <script src="../static/js/auto-complete.js"></script>
+    <script src="../static/js/volcano_filter.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="{{ url_for('dashboard') }}">Disasters Data</a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('volcano') }}">Volcano</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+        </ul>
+    </nav>
+
+    <br>
+    <div class="container">
+        {%block content%}
+        {%endblock%}
+    </div>
+</body>
+
+</html>

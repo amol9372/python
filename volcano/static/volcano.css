@@ -1,0 +1,33 @@
+body{
+    background-color: lightgrey;
+}
+.filter-container-1 {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content : left;
+    align-content: space-around;
+    padding-bottom: 3%;   
+    gap: 20px;
+ }
+
+ .filter-container-2 {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content : left;
+    align-content: space-around;
+    padding-bottom: 2%; 
+    gap: 35px;  
+ }
+
+ .submit-button {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    padding-bottom: 3%;
+    
+ }
+
+ #name-validation {
+    color: red;
+ }

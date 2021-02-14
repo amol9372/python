@@ -1,0 +1,61 @@
+{%extends "dashboard.html"%}
+{%block content%}
+<div class="container">
+    <form id="filter-form">
+        <div class="filter-container-1">
+            <div class="form-group">
+                <input type="text" id="volcano-name" class="volcano-name-search" placeholder="Search Name" required/>
+                <p id="name-validation"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="validationDefault04" class="form-label">Country</label>
+
+                <select name="country-select" class="form-select" id="country"
+                    onchange="filterByCountry();">
+                    <option selected disabled value="">Choose Country</option>
+                    {% for c in country[1:] %}
+                    <option value="{{c}}">{{c}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="filter-container-2">
+
+            <div class="form-group">
+                <label for="validationDefault04" class="form-label">Type</label>
+
+                <select name="type-select" class="form-select" id="volcano-type" onchange="filterByType()">
+                    <option selected disabled value="">Choose Type</option>
+                    {% for t in type[1:] %}
+                    <option value="{{t}}">{{t}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="dropdown">
+                <label for="validationDefault04" class="form-label">Elevation</label>
+                <select class="form-select" aria-label="Default select example" id = "elevation" onchange="filterByElevation()">
+                    <option selected>Elevation Greater Than</option>
+                    <option value="500">500</option>
+                    <option value="2000">2000</option>
+                    <option value="5000">5000</option>
+                  </select>
+            </div>
+        </div>
+
+        <div class="submit-button">
+            <button type="button" class="btn btn-primary" onclick="searchByName()">Search</button>            
+        </div>
+
+    </form>
+
+
+</div>
+
+<div id="my_map">
+    <iframe id="map" width="600" height="400" src="static/volcano_map.html"></iframe>
+</div>
+
+{%endblock%}
