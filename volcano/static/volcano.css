@@ -21,6 +21,17 @@ body{
     gap: 35px;  
  }
 
+ .filter-container-3 {
+   display: flex; /* or inline-flex */
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content : left;
+   align-content: space-around;
+   margin-left: 3%;
+   padding-bottom: 2%; 
+   gap: 28px;  
+}
+
  .submit-button {
     display: flex; /* or inline-flex */
     flex-direction: row;
@@ -28,6 +39,6 @@ body{
     
  }
 
- #name-validation {
+ .validation {
     color: red;
  }
