@@ -1,0 +1,49 @@
+{
+    "one_call_base_api": "https://api.openweathermap.org/data/2.5/onecall",
+    "openweather_api_key": "65390ad30b25b0edcb4b5d31cbac5ff0",
+    "google_api_key": "AIzaSyCbjcwNNTDrnt85Cn2yP7DQXKw7WC7r9Hs",
+    "ipinfo_token": "e86f6533020d1b",
+    "climate_mappings": {
+        "Rain": {
+            "default": "static/icons/rain.svg",
+            "freezing rain": "",
+            "extreme rain": "",
+            "light rain": "static/icons/drizzle.svg"
+        },
+        "Drizzle": {
+            "default": "static/icons/drizzle.svg"
+        },
+        "Thunderstorm": {
+            "default": "static/icons/thunderstorm.svg",
+            "thunderstorm with heavy rain": "",
+            "light thunderstorm": ""
+        },
+        "Snow": {
+            "default": "static/icons/snowflake.svg",
+            "Heavy shower snow": "",
+            "light snow": ""
+        },
+        "Clear": {
+            "default": "static/icons/sun.svg"
+        },
+        "Clouds": {
+            "default": "static/icons/clouds.svg",
+            "few clouds: 11-25%": "",
+            "scattered clouds: 25-50%": "",
+            "broken clouds: 51-84%": "",
+            "overcast clouds: 85-100%": ""
+        },
+        "random": {
+            "default": "static/icons/air-pollution.svg",
+            "Mist": "",
+            "Smoke": "",
+            "Haze": "",
+            "Dust": "",
+            "Fog": "",
+            "Sand": "",
+            "Ash": "",
+            "Squall": "",
+            "Tornado": ""
+        }
+    }
+}
