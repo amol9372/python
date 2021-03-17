@@ -4,17 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/weather.css">
+
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbjcwNNTDrnt85Cn2yP7DQXKw7WC7r9Hs&libraries=places,geometry&callback=autoCompleteUserSearch"></script>
-
-    <script src="../static/js/weather.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="../static/weather.css">
+    <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/card-selection.js') }}"></script>
 
 </head>
 
@@ -22,13 +25,15 @@
     <form>
         <div class="main-container">
             <div class="search-container">
-
-                <input type="text" class="form-control" placeholder="Enter Location" id="user-location"
-                    value="{{location.city}}"/>
-                <p id="search-validation" style="display: none;"></p>    
+                <input type="search" class="form-control" placeholder="Search Location" id="user-location"
+                    value="{{location.city}}">
+                <label id="search-validation" style="display: none; color: red;" ></label>
+                
                 <div class="input-group-btn">
                     <button type="button" class="btn btn-outline-secondary" id="search-button"
-                        onclick="showWeatherForSelectedLocation()"> <label> Search </label> <span id="search-spinner" style="display: none;" class="spinner-border spinner-border-sm"
+                        onclick="showWeatherForSelectedLocation()"> <label id="search-label"
+                            style="align-content: center;"> Search </label> <span id="search-spinner"
+                            style="display: none; align-content: center;" class="spinner-border spinner-border-sm"
                             role="status" aria-hidden="true"></span></button>
                 </div>
             </div>
@@ -55,8 +60,9 @@
         </div>
     </form>
 
-    <div style="position: absolute; bottom: 0; left: 0;">Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a
-            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <!-- <div style="position: absolute; bottom: 0; left: 0;">Icons made by <a
+            href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
 </body>
 
 </html>

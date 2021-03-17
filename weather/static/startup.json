@@ -6,44 +6,52 @@
     "climate_mappings": {
         "Rain": {
             "default": "static/icons/rain.svg",
-            "freezing rain": "",
-            "extreme rain": "",
-            "light rain": "static/icons/drizzle.svg"
+            "light rain": "static/icons/drizzle.svg",
+            "freezing rain": "static/icons/snow-rain.svg"
         },
         "Drizzle": {
             "default": "static/icons/drizzle.svg"
         },
         "Thunderstorm": {
             "default": "static/icons/thunderstorm.svg",
-            "thunderstorm with heavy rain": "",
-            "light thunderstorm": ""
+            "thunderstorm with rain": "static/icons/thunderstorm-rain.svg",
+            "thunderstorm with heavy rain": "static/icons/thunderstorm-rain.svg",
+            "thunderstorm with light drizzle": "static/icons/thunderstorm-rain.svg"
         },
         "Snow": {
             "default": "static/icons/snowflake.svg",
-            "Heavy shower snow": "",
-            "light snow": ""
+            "Heavy snow": "static/icons/snowing.svg",
+            "Rain and snow": "static/icons/snow-rain.svg",
+            "Heavy shower snow": "static/icons/snow-rain.svg"
         },
         "Clear": {
             "default": "static/icons/sun.svg"
         },
         "Clouds": {
             "default": "static/icons/clouds.svg",
-            "few clouds: 11-25%": "",
-            "scattered clouds: 25-50%": "",
-            "broken clouds: 51-84%": "",
-            "overcast clouds: 85-100%": ""
+            "few clouds: 11-25%": "static/icons/few-clouds.svg",
+            "scattered clouds: 25-50%": "static/icons/scattered-clouds.svg"
         },
-        "random": {
-            "default": "static/icons/air-pollution.svg",
-            "Mist": "",
-            "Smoke": "",
-            "Haze": "",
-            "Dust": "",
-            "Fog": "",
-            "Sand": "",
-            "Ash": "",
-            "Squall": "",
-            "Tornado": ""
+        "Smoke": {
+            "default": "static/icons/carbon-dioxide.svg"
+        },
+        "Haze": {
+            "default": "static/icons/haze.svg"
+        },
+        "Mist": {
+            "default": "static/icons/mist.svg"
+        },
+        "Dust": {
+            "default": "static/icons/dust.svg"
+        },
+        "Sand": {
+            "default": "static/icons/sand.svg"
+        },
+        "Fog": {
+            "default": "static/icons/fog.svg"
+        },
+        "Squall": {
+            "default": "static/icons/storm.svg"
         }
     }
 }

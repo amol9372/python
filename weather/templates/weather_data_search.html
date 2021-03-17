@@ -3,14 +3,16 @@
 
         <div class="temperature-location-bar">
             <div class="weather-brief" style="align-content: flex-start;">
-                <img src="{{ current_weather.get('weather')[0].get('icon') }}" id="weather-icon" style="height: 50px; width: 50px;">
+                <img src="{{ current_weather.get('weather')[0].get('icon') }}" id="weather-icon"
+                    style="height: 50px; width: 50px;">
                 <label class="temperature-label" id="current-temp">
                     <h1>{{current_weather.get('temp')}}°C</h1>
                 </label>
                 <div class="temperature-params">
                     <label id="wind" class="wind">Wind : {{ current_weather.get('wind_speed') }} Miles/hr</label>
                     <label id="humidity" class="humidity">Humidity : {{ current_weather.get('humidity') }} %</label>
-                    <label id="visibility" class="visibility">Visibility : {{ current_weather.get('visibility') }}</label>
+                    <label id="visibility" class="visibility">Visibility : {{ current_weather.get('visibility')
+                        }} m</label>
                 </div>
             </div>
             <div class="location-brief" style="align-content: flex-end; flex-grow: 1; text-align: right;">
@@ -22,22 +24,37 @@
 </div>
 
 <div class="temperature-forecast">
-    {% for day in forecast_data %}
-    <div class="card">
-        <div class="card-body" onclick="changeDay( {{ day }} )">
-            <input type="radio" name="day" value="'{{ day.get('dt')[:3] }}'" class="card-input-element d-none" id="demo1">
-            <img src="{{ day.get('weather')[0].get('icon') }}" style="height: 45px; width: 45px;" />
 
-            <div class="day-of-week">
-                <label>{{ day.get('dt')[:3] }}</label>
-            </div>
+    <div class="card text-center justify-content-center shaodw-lg card-1 border-0 bg-white px-sm-2">
+        <div class="card-body show">
+            <div class="radio-group row justify-content-between px-3 text-center a">
+                {% for day in forecast_data %}
 
-            <div class="min-max-temp">
-                <label class="max-temp">{{ day.get('temp').get('max') }}</label>
-                <label class="min-temp">{{ day.get('temp').get('min') }}</label>
+                <div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio" onclick="changeDay( {{ day }} )">
+
+                    <div class="flex-row">
+
+                        <img src="{{ day.get('weather')[0].get('icon') }}"
+                            style="height: 45px; width: 45px; margin-top: 20px;" />
+
+                        <div class="day-of-week">
+                            <label>{{ day.get('dt')[:3] }}</label>
+                        </div>
+
+                        <div class="min-max-temp">
+                            <label class="max-temp">{{ day.get('temp').get('max') }}</label>
+                            <!-- <div class="vl" style="border-left: 1px solid lightslategray; height: auto"></div> -->
+                            <label class="min-temp">{{ day.get('temp').get('min') }}</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
             </div>
 
         </div>
     </div>
-    {% endfor %}
+
 </div>

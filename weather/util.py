@@ -5,6 +5,7 @@ import requests
 import json
 import ipinfo
 
+
 with open("static/startup.json") as json_file:
     init_data = json.load(json_file)
 
@@ -45,15 +46,15 @@ class WeatherUtil:
         return date_time
 
     def get_address(self, google_address, ipinfo_location):
-       
+
         address: Dict
-           
+
         if not google_address:
             address = {"city": ipinfo_location['city'], "state": ipinfo_location['region'],
                        "postal_code": ipinfo_location['postal'], "country": ipinfo_location['country']}
         else:
             address = {"area": google_address.get("sublocality_level_1"), "city": google_address.get("administrative_area_level_2"),
-                       "state": google_address.get("administrative_area_level_1"),  "postal_code": google_address.get("postal_code"), 
+                       "state": google_address.get("administrative_area_level_1"),  "postal_code": google_address.get("postal_code"),
                        "country": google_address.get("country")}
         return address
 
@@ -61,11 +62,12 @@ class WeatherUtil:
         climate_mappings: dict = init_data.get("climate_mappings")
         weather_type = climate_mappings.get(weather[0].get("main"))
         # check if weather decription exists in mappings
+
         weather_desc = weather[0].get("description")
         if weather_type.get(weather_desc) is not None and weather_type.get(weather_desc) != "":
-            return weather_type.get(weather_desc)    
+            return weather_type.get(weather_desc)
 
-        return weather_type.get("default")        
+        return weather_type.get("default")
 
 # {
 #    "id": 800,
