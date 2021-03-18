@@ -1,16 +1,25 @@
-from datetime import date, datetime
-import calendar
-from typing import Any, Dict
+from datetime import datetime
+from typing import Dict
 import requests
 import json
 import ipinfo
+from ssm_parameter_store import EC2ParameterStore
 
-
+# load configuration data
 with open("static/startup.json") as json_file:
     init_data = json.load(json_file)
 
-base_params = {"exclude": "minutely,hourly",
-               "units": "metric", "appid": "65390ad30b25b0edcb4b5d31cbac5ff0"}
+
+open_weather_base_params = {"exclude": "minutely,hourly",
+                            "units": "metric"}
+
+# get access id and secert from aws to run on local
+aws_param_store = EC2ParameterStore()
+
+weather_params = aws_param_store.get_parameters_with_hierarchy(
+    "/applications/weather")
+
+print(weather_params)
 
 
 class WeatherUtil:
@@ -20,19 +29,22 @@ class WeatherUtil:
         print("Data has been initialized ::::")
 
     def get_all_weather_data(self, params: Dict):
-        params.update(base_params)
+        params.update(open_weather_base_params)
+        # add api key here
+        params.update({"appid": weather_params['openweather_api_key']})
         all_weather_data = requests.get(
             init_data.get("one_call_base_api"), params)
         return all_weather_data
 
     def get_location_from_ip(self, ip):
-        access_token = init_data.get("ipinfo_token")
+        # access_token = init_data.get("ipinfo_token")
+        access_token = weather_params['ipinfo_token']
         handler = ipinfo.getHandler(access_token)
         details = handler.getDetails(ip)
         return details.all
 
     def get_location(self):
-        access_token = init_data.get("ipinfo_token")
+        access_token = weather_params['ipinfo_token']
         handler = ipinfo.getHandler(access_token)
         details = handler.getDetails()
         return details.all

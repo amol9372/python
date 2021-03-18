@@ -1,5 +1,5 @@
 from typing import Tuple
-from flask import Flask, json, render_template, request, make_response, jsonify, redirect
+from flask import Flask, render_template, request
 from util import WeatherUtil
 from datetime import date, datetime
 import calendar

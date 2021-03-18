@@ -1,8 +1,5 @@
 {
     "one_call_base_api": "https://api.openweathermap.org/data/2.5/onecall",
-    "openweather_api_key": "65390ad30b25b0edcb4b5d31cbac5ff0",
-    "google_api_key": "AIzaSyCbjcwNNTDrnt85Cn2yP7DQXKw7WC7r9Hs",
-    "ipinfo_token": "e86f6533020d1b",
     "climate_mappings": {
         "Rain": {
             "default": "static/icons/rain.svg",
