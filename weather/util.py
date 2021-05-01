@@ -14,7 +14,9 @@ open_weather_base_params = {"exclude": "minutely,hourly",
                             "units": "metric"}
 
 # get access id and secert from aws to run on local
-aws_param_store = EC2ParameterStore()
+aws_param_store = EC2ParameterStore(aws_access_key_id="AKIAUU63GJAHLC5EZANZ",
+                                    aws_secret_access_key="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",
+                                    region_name='ap-south-1')
 
 weather_params = aws_param_store.get_parameters_with_hierarchy(
     "/applications/weather")
